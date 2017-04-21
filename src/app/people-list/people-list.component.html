@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li  class="list-group-item" *ngFor="let person of people">
+    <a href="#"  [routerLink]="['/persons', person.id]">
+      {{person.name}}
+    </a>
+  </li>
+</ul>
+<section *ngIf="errorMessage">
+  {{errorMessage}}
+</section>

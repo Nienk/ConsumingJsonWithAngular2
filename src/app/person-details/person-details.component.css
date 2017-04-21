@@ -1,0 +1,8 @@
+input .invalid {
+  border-color: #a94442;
+}
+.error{
+  padding: 12px;
+  background-color: rgba(255, 0, 0, 0.2);
+  color: red;
+}

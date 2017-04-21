@@ -1,0 +1,38 @@
+<section *ngIf="person">
+  <div class="panel panel-default">
+
+
+    <div class="panel-heading">
+      <h3 class="panel-title">{{person.name}} weights {{person.weight}} and is {{person.height}} tall.</h3>
+    </div>
+    <div class="panel-body">
+
+      <form (ngSubmit)="savePersonDetails()" #personForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="person.name" #name="ngModel">
+          <div [hidden]="name.valid || name.pristine" class="error">
+            Name is required my good sir/lady!
+          </div>
+          <p>
+            input "name" class is: {{ name.className }}
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="weight">Weight</label>
+          <input type="text" class="form-control" id="weight" name="weight" [(ngModel)]="person.weight">
+        </div>
+        <div class="form-group">
+          <label for="height">Height</label>
+          <input type="text" class="form-control" id="height" name="height" [(ngModel)]="person.height">
+        </div>
+        <button type="submit" class="btn btn-default" [disabled]="!personForm.form.valid">Opslaan</button>
+      </form>
+    </div>
+
+
+  </div>
+
+
+  <button type="button" class="btn btn-primary" (click)="gotoPeoplesList()">Terug naar de lijst</button>
+</section>
